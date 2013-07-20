@@ -1,6 +1,6 @@
 {
   "name": "fantasy-stores",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Store control structure.",
   "main": "store.js",
   "scripts": {
