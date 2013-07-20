@@ -1,0 +1,33 @@
+{
+  "name": "fantasy-stores",
+  "version": "0.0.0",
+  "description": "Store control structure.",
+  "main": "store.js",
+  "scripts": {
+    "test": "node_modules/.bin/grumble test",
+    "build": "node_modules/.bin/grumble"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/puffnfresh/fantasy-stores.git"
+  },
+  "keywords": [
+    "fantasyland",
+    "store",
+    "comonad"
+  ],
+  "author": "Brian McKenna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puffnfresh/fantasy-stores/issues"
+  },
+  "grumble": {
+    "export": "Store"
+  },
+  "dependencies": {
+    "daggy": "0.0.1"
+  },
+  "devDependencies": {
+    "grumble": "0.0.1"
+  }
+}
