@@ -1,22 +1,22 @@
 var daggy = require('daggy'),
-    Store = daggy.tagged('setter', 'getter');
+    Store = daggy.tagged('set', 'get');
 
 // Methods
 Store.prototype.extract = function() {
-    return this.setter(this.getter());
+    return this.set(this.get());
 };
 Store.prototype.extend = function(f) {
     var self = this;
     return Store(
         function(k) {
             return f(Store(
-                self.setter,
+                self.set,
                 function() {
                     return k;
                 }
             ));
         },
-        this.getter
+        this.get
     );
 };
 
