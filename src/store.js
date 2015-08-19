@@ -23,8 +23,8 @@ Store.prototype.extend = function(f) {
 // Derived
 Store.prototype.map = function(f) {
     var self = this;
-    return this.extend(function(c) {
-        return f(c.extract());
+    return self.extend(function(c) {
+        return f(self.get());
     });
 };
 
