@@ -1,15 +1,29 @@
 {
   "name": "fantasy-stores",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Store control structure.",
-  "main": "store.js",
+  "files": ["fantasy-lenses.js", "src/*.js"],
+  "main": "fantasy-stores.js",
+  "dependencies": {
+    "daggy": "0.0.1",
+    "fantasy-stores": "~0.1.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "0.1.9",
+    "grunt": "0.4.x",
+    "grunt-contrib-jshint": "0.6.x",
+    "grunt-contrib-nodeunit": "0.2.0",
+    "fantasy-check": "0.x.x",
+    "fantasy-helpers": "0.0.x",
+    "fantasy-identities": "0.x.x",
+    "fantasy-combinators": "0.0.1"
+  },
   "scripts": {
-    "test": "node_modules/.bin/grumble test",
-    "build": "node_modules/.bin/grumble"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/puffnfresh/fantasy-stores.git"
+    "url": "git://github.com/fantasyland/fantasy-lenses.git"
   },
   "keywords": [
     "fantasyland",
@@ -19,15 +33,6 @@
   "author": "Brian McKenna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/puffnfresh/fantasy-stores/issues"
-  },
-  "grumble": {
-    "export": "Store"
-  },
-  "dependencies": {
-    "daggy": "0.0.1"
-  },
-  "devDependencies": {
-    "grumble": "0.0.1"
+    "url": "https://github.com/fantasyland/fantasy-lenses/issues"
   }
 }
