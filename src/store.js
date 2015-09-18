@@ -28,6 +28,10 @@ Store.prototype.map = function(f) {
     });
 };
 
+Store.prototype.over = function(f) {
+    return this.set(f(this.get()));
+};
+
 // Export
 if(typeof module != 'undefined')
     module.exports = Store;
