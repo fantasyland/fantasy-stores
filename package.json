@@ -6,7 +6,8 @@
   "main": "fantasy-stores.js",
   "dependencies": {
     "daggy": "0.0.1",
-    "fantasy-stores": "~0.1.0"
+    "fantasy-stores": "~0.1.0",
+    "fantasy-combinators": "0.0.x"
   },
   "devDependencies": {
     "grunt-cli": "0.1.9",
@@ -15,11 +16,10 @@
     "grunt-contrib-nodeunit": "0.2.0",
     "fantasy-check": "0.x.x",
     "fantasy-helpers": "0.0.x",
-    "fantasy-identities": "0.x.x",
-    "fantasy-combinators": "0.0.1"
+    "fantasy-identities": "0.x.x"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "node --harmony_destructuring node_modules/grunt-contrib-nodeunit/node_modules/.bin/nodeunit test/*.js"
   },
   "repository": {
     "type": "git",

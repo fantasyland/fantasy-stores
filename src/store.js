@@ -1,5 +1,10 @@
-var daggy = require('daggy'),
-    Store = daggy.tagged('set', 'get');
+'use strict';
+
+const daggy = require('daggy');
+const {constant} = require('fantasy-combinators');
+
+const Store = daggy.tagged('set', 'get');
+
 
 // Methods
 Store.prototype.extract = function() {
@@ -8,12 +13,10 @@ Store.prototype.extract = function() {
 Store.prototype.extend = function(f) {
     var self = this;
     return Store(
-        function(k) {
+        (k) => {
             return f(Store(
                 self.set,
-                function() {
-                    return k;
-                }
+                () => k
             ));
         },
         this.get
@@ -23,9 +26,11 @@ Store.prototype.extend = function(f) {
 // Derived
 Store.prototype.map = function(f) {
     var self = this;
-    return self.extend(function(c) {
-        return f(self.get());
-    });
+    return self.extend((c) => f(self.get()));
+};
+
+Store.prototype.over = function(f) {
+    return this.set(f(this.get()));
 };
 
 // Export

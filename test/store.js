@@ -1,11 +1,11 @@
-var λ           = require('fantasy-check/src/adapters/nodeunit'),
-    functor     = require('fantasy-check/src/laws/functor'),
-    combinators = require('fantasy-combinators'),
-    
-    Identity  = require('fantasy-identities'),
-    Store = require('../fantasy-stores'),
+'use strict';
 
-    identity = combinators.identity;
+const λ = require('fantasy-check/src/adapters/nodeunit');
+const functor = require('fantasy-check/src/laws/functor');
+const {identity} = require('fantasy-combinators');
+    
+const Identity = require('fantasy-identities');
+const Store = require('../fantasy-stores');
  
 function of(x) {
     return Store(identity, identity);
